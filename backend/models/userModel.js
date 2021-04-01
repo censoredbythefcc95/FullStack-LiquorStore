@@ -1,76 +1,28 @@
 import mongoose from 'mongoose';
 
-const orderSchema = mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'User'
-    },
-    orderItems: [
-        {
-            name: { type: String, required: true },
-            qty: { type: Number, required: true },
-            image: { type: String, required: true },
-            price: { type: Number, required: true },
-            product: {
-                type: mongoose.Schema.Types.ObjectId,
-                required: true,
-                ref: 'Product'
-            }
-        }
-    ],
-    shippingAddress: {
-        address: { type: String, required: true},
-        city: { type: String, required: true},
-        postalCode: { type: String, required: true},
-        county: { type: String, required: true}
-    },
-    paymentMethod: {
+const userSchema = mongoose.Schema({
+    name: {
         type: String,
         required: true
     },
-    paymentResult: {
-        id: { type: String },
-        status: { type: String },
-        update_time: { type: String },
-        email_address: { type: String }
-    },
-    taxPrice: {
-        type: Number,
+    email: {
+        type: String,
         required: true,
-        default: 0.0
+        unique: true
     },
-    taxPrice: {
-        type: Number,
-        required: true,
-        default: 0.0
+    password: {
+        type: String,
+        required: true
     },
-    shippingPrice: {
-        type: Number,
-        required: true,
-        default: 0.0
-    },
-    isPaid: {
+    isAdmin: {
         type: Boolean,
         required: true,
         default: false
-    },
-   paidAt: {
-       type: Date
-   },
-   isDelivered: {
-       type: Boolean,
-       required: true,
-       default: false
-   },
-   deliveredAt: {
-       type: Date,
-   },
-}, 
-{
+    }
+}, {
     timestamps: true
 })
 
-const Order = mongoose.model('Order', orderSchema)
+const User = mongoose.model('User', userSchema)
 
-export default Order;
+export default User;
