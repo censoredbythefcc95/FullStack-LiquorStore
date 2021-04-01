@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Corona Extra',
     image: '/images/corona.jpeg.webp',
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Miller Lite',
     image: '/images/millerlite.jpeg.webp',
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '3',
     name: 'Michelob Ultra',
     image: '/images/michelob.jpeg.webp',
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 6,
   },
   {
-    _id: '4',
     name: 'Smirnoff Ice',
     image: '/images/smirnoff.jpeg.webp',
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 17,
   },
   {
-    _id: '5',
     name: 'Guinness Stout',
     image: '/images/guinness.jpeg.webp',
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 6,
   },
   {
-    _id: '6',
     name: 'Miller High Life',
     image: '/images/millerhighlife.jpeg.webp',
     description:
