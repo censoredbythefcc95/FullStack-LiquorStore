@@ -11,6 +11,8 @@ const reducer = combineReducers({
 });
 
 const cartItemsFromStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
+// clearStorage clears local storage. DO NOT USE, just here for future reference.
+// const clearStorage = localStorage.clear();
 
 const initialState = {
     cart: { cartItems: cartItemsFromStorage },
