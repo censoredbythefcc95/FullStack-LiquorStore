@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, ListGroup, Image, Card, } from 'react-bootstrap'
+import { Row, Col, ListGroup, Image, Card, } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from "../components/Loader"
@@ -25,10 +25,15 @@ const OrderScreen = ({ match }) => {
     }
 
 
-
+    // checking if orderIf matches the ID in the url. If it does not, then dispatch
+    // orderDetails to fetch the most recent order
+    // also I am passing in dispatch as a dependency because the compiler
+    //keeps complaining about it, although it isn't actually neccesary.
     useEffect(() => {
-      dispatch(getOrderDetails(orderId))
-    }, [dispatch, orderId])
+        if(!order || order._id !== orderId) {
+            dispatch(getOrderDetails(orderId))
+        }
+    }, [dispatch, order, orderId])
 
     return loading ? <Loader /> : error ? <Message variant='danger'>{error}
     </Message> : <>
