@@ -49,7 +49,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `./api/orders/${id}`, 
+            `/api/orders/${id}`, 
             config 
             )
 
