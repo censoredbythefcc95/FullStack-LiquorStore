@@ -96,7 +96,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `./api/users/${id}`, 
+            `/api/users/${id}`, 
             config 
             )
 
@@ -189,7 +189,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.delete(
+        await axios.delete(
             `/api/users/${id}`,
             config 
             )
