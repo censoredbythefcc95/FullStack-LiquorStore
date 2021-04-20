@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 // if user attempts to upload file not listed in algo,
 // then cb will return message Images Only!
 function checkFileType(file, cb) {
-    const filetypes = /jpg|jpeg|png/
+    const filetypes = /jpg|jpeg|png|webp/
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
     const mimetype = filetypes.test(file.mimetype)
 
